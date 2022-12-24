@@ -130,7 +130,8 @@ main {
 .fa-secondary {
     transition: var(--transition-speed);
 }
-
+/*dropdown*/
+/*Qua iniziano i problemi*/
 .nav-link {
     display: none;
 
@@ -156,7 +157,9 @@ main {
 
 .nav-icon:hover+.nav-link a,
 .nav-link:hover a{
-    
+    max-height: max-content;
+    transition: max-height 0.15s ease-in;
+
 }
 
 h1{

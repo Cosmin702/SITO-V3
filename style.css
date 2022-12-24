@@ -133,8 +133,8 @@ main {
 /*dropdown*/
 /*Qua iniziano i problemi*/
 .nav-link {
-    display: none;
-
+    height: 0px;
+    transition: height 1s ease;
 }
 
 .nav-link a {
@@ -144,55 +144,39 @@ main {
     text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
     transition: var(--transition-speed);
-    padding: 10px;
+    padding: 0px;
     overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.15s ease-out;
+
 }
 
 .nav-icon:hover+.nav-link,
 .nav-link:hover {
     display: block;
+    height: max-content;
 }
 
-.nav-icon:hover+.nav-link a,
-.nav-link:hover a{
-    max-height: max-content;
-    transition: max-height 0.15s ease-in;
+div a {
+    visibility: hidden;
+    opacity: 0;
+    height: 0px;
+    transition: visibility 0s, opacity 0.5s linear, height 0.5s ;
 
-}
+  }
+  
+  .nav-icon:hover+.nav-link a,
+  .nav-link:hover a
+  {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    padding: 10px;
+  }
 
 h1{
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*mobile ecc*/
 /*
 @media only screen and (max-width: 600px) {
     .navbar {
@@ -213,7 +197,7 @@ h1{
         margin: 0;
     }
 }
-*/
+
 @media only screen and (min-width: 600px) {
     .navbar {
         top: 0;
@@ -230,3 +214,4 @@ h1{
         transition: opacity var(--transition-speed);
     }
 }
+*/

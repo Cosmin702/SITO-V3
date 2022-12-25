@@ -5,7 +5,7 @@ facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non 
     :root {
         --text-primary: rgb(58, 58, 58);
         --text-secondary: rgb(0, 0, 0);
-        --icon-primary: rgb(116, 255, 135);
+        --icon-primary: rgb(107, 235, 124);
         --icon-secondary: rgb(0, 158, 124);
         --gb-primary: #f5f5f5;
         --gb-secondary: #afafaf;
@@ -25,7 +25,7 @@ facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non 
 @media (prefers-color-scheme: dark)
 {
     :root {
-        --text-primary: rgb(78, 78, 78);
+        --text-primary: rgb(185, 185, 185);
         --text-secondary: white;
         --icon-primary: rgb(116, 255, 135);
         --icon-secondary: rgb(0, 158, 124);

@@ -159,7 +159,7 @@ div a {
     visibility: hidden;
     opacity: 0;
     height: 0px;
-    transition: visibility 0s, opacity 0.5s linear, height 0.5s ;
+    transition: visibility 0s, opacity var(--transition-speed) linear, height var(--transition-speed), padding var(--transition-speed) ;
 
   }
   

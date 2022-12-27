@@ -57,11 +57,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background: var(--gb-primary);
+    background: #000000;
 }
 
 body::-webkit-scrollbar-thumb {
-    background: var(--gb-secondary);
+    background: #360034;
 }
 
 main {
@@ -213,11 +213,12 @@ main {
 .titolo{
     text-align: right;
     font-size: 5vw;
-    animation: 1s ease-out 0s 1 slideInLeft;
+    animation: 1s ease-out 0s 1 slidedestra;
     padding: 40px;
     margin-right: 10%;
 }
-@keyframes slideInLeft {
+
+@keyframes slidedestra {
     0% {
       transform: translateX(100%);
     }

@@ -1,7 +1,6 @@
 /*Dichiariamo e assegnaimo le vairabili di base, come i colori dei testi e la velocitá delle trasazioni.
 facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non tutte*/
-@media (prefers-color-scheme: light) 
-{
+@media (prefers-color-scheme: light) {
     :root {
         --text-primary: rgb(58, 58, 58);
         --text-secondary: rgb(0, 0, 0);
@@ -10,6 +9,7 @@ facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non 
         --gb-primary: #f5f5f5;
         --gb-secondary: #afafaf;
     }
+
     body {
         color: black;
         background-color: white;
@@ -17,13 +17,13 @@ facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non 
         padding: 0;
         background: url(backgroud-white.svg);
     }
+
     .nav-icon {
         filter: grayscale(100%) opacity(1);
     }
 }
 
-@media (prefers-color-scheme: dark)
-{
+@media (prefers-color-scheme: dark) {
     :root {
         --text-primary: rgb(185, 185, 185);
         --text-secondary: white;
@@ -32,6 +32,7 @@ facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non 
         --gb-primary: #23232e;
         --gb-secondary: #141418;
     }
+
     body {
         color: rgb(255, 255, 255);
         background-color: white;
@@ -39,17 +40,18 @@ facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non 
         padding: 0;
         background: url(backgroud-dark.svg);
     }
+
     .nav-icon {
         filter: grayscale(100%) opacity(0.7);
     }
 }
+
 :root {
-    font-size: 15px;
+    font-size: 16px;
     font-family: arial, sans-serif;
     --transition-speed: 600ms;
     --background-color: black;
 }
-
 
 /*In teoria questa parte dovrebbe modificare l'aspetto della scrollbar, peró non funziona ancora*/
 body::-webkit-scrollbar {
@@ -67,6 +69,7 @@ body::-webkit-scrollbar-thumb {
 main {
     margin-left: 5rem;
     padding: 1rem;
+    margin-right: 10%;
 }
 
 /*Navigation bar*/
@@ -74,9 +77,11 @@ main {
     top: 0;
     width: 5rem;
     height: 100vh;
-    position: fixed; /*Per rimanere sempre a destra anque quando si scrolla sotto*/
+    position: fixed;
+    /*Per rimanere sempre a destra anque quando si scrolla sotto*/
     background-color: var(--gb-primary);
-    transition: width 300ms ease; /*Animazione del apertura della navigation bar*/
+    transition: width 300ms ease;
+    /*Animazione del apertura della navigation bar*/
 }
 
 .navbar:hover {
@@ -90,9 +95,11 @@ main {
     margin: 0;
     /*Creiamo una flexbox, che conterra gli elementi della navigation bar*/
     display: flex;
-    flex-direction: column; /*Di base gli elementi vanno in riga, ma dato che vogliamo la nostra barra a sinistra, lo impostiamo a colonne.*/
+    flex-direction: column;
+    /*Di base gli elementi vanno in riga, ma dato che vogliamo la nostra barra a sinistra, lo impostiamo a colonne.*/
     align-items: center;
 }
+
 /*Per non mostrare gli elementi della navigation bar prima che finisca l'animazione, impostiamo overflow: hidden*/
 .nav-item {
     width: 100%;
@@ -119,7 +126,8 @@ main {
 }
 
 .navbar:hover .logo svg {
-    transform: rotate(-180deg);/*Quando passiamo il mouse sopra la barra di navigazione ruotiamo l'icona di -180 gradi*/
+    transform: rotate(-180deg);
+    /*Quando passiamo il mouse sopra la barra di navigazione ruotiamo l'icona di -180 gradi*/
 }
 
 .nav-icon {
@@ -131,9 +139,11 @@ main {
     text-decoration: none;
     transition: var(--transition-speed);
 }
+
 /*Animazione icone*/
 /*Ogni volta che passiamo il mouse su un icona o testo, riuduciamo l'effetto grayscale a 0, mostrando cosí il colore del icona*/
-.nav-icon:hover, .nav-link a:hover {
+.nav-icon:hover,
+.nav-link a:hover {
     filter: grayscale(0%) opacity(1);
     background: var(--gb-secondary);
     color: var(--text-secondary);
@@ -155,6 +165,7 @@ main {
     margin: 0 1.25rem;
     font-size: 2rem;
 }
+
 /*Colore icone*/
 .fa-primary,
 .fa-solid {
@@ -167,9 +178,9 @@ main {
 
 .fa-primary,
 .fa-secondary {
-    transition: var(--transition-speed); /*Velocitá animazione effeto grayscale*/
+    transition: var(--transition-speed);
+    /*Velocitá animazione effeto grayscale*/
 }
-
 
 /*Dropdown menu*/
 /*Qua iniziano i problemi*/
@@ -181,68 +192,72 @@ main {
 
 .nav-link a {
     text-align: center;
-    display: block; /*Impostiamo display: block per avere ogni link su una riga diversa*/
+    display: block;
+    /*Impostiamo display: block per avere ogni link su una riga diversa*/
     color: var(--text-primary);
     text-decoration: none;
-    filter: grayscale(100%) opacity(0.7); 
+    filter: grayscale(100%) opacity(0.7);
     padding: 0;
-    overflow: hidden; /*Rendiamo non visibile il testo per non vederlo quando non si ha il mouse sul icona*/
+    overflow: hidden;
+    /*Rendiamo non visibile il testo per non vederlo quando non si ha il mouse sul icona*/
     visibility: hidden;
     opacity: 0;
-    height: 0; 
+    height: 0;
     /*Velocitá animazioni*/
-    transition: visibility 0s, opacity var(--transition-speed) linear, height var(--transition-speed), padding var(--transition-speed), grayscale var(--transition-speed) ;
+    transition: visibility 0s, opacity var(--transition-speed) linear,
+        height var(--transition-speed), padding var(--transition-speed),
+        grayscale var(--transition-speed);
 }
+
 /*Quando passiamo il mouse su un icona, il dropdown menu torna alla sua altezza originale*/
 .nav-icon:hover+.nav-link,
 .nav-link:hover {
     display: block;
     height: max-content;
 }
+
 /*Quando passiamo il mouse su un icona, i link del dropdown menu torna alla sua altezza originale e si rende visibile*/
-  .nav-icon:hover+.nav-link a,
-  .nav-link:hover a
-  {
+.nav-icon:hover+.nav-link a,
+.nav-link:hover a {
     visibility: visible;
     opacity: 1;
     height: auto;
     padding: 10px;
-  }
+}
 
 /*Contenuto pagina*/
-.titolo{
+.titolo {
     text-align: right;
     font-size: 5vw;
-    animation: 1s ease-out 0s 1 slideInLeft;
-    padding: 40px;
-    margin-right: 10%;
+    animation: 1s ease-out 0s 1 slidedestra;
 }
-@keyframes slideInLeft {
+
+@keyframes slidedestra {
     0% {
-      transform: translateX(100%);
+        transform: translateX(70%);
+        opacity: 0;
+        
+    }
+    90%{
+        transform: translateX(0);
     }
     100% {
-      transform: translateX(0);
+        opacity: 1;
     }
-  }
-  
+}
 
+.bottone {
+    float: right;
+    font-size: 2.5vw;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 15px;
+    transition: background-color var(--transition-speed);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.bottone:hover {
+    background-color: #4d3d64;
+}
 
 /* DA IMPLEMENTARE*/
 /*Mobile ecc, per rendere la barra adatta ai dispositivi mobile*/

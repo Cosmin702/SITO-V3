@@ -3,33 +3,33 @@ Il sito per compito di TPSIT
 
 [Link sito](https://cosmin702.github.io/SITO-V3/ "Homepage")
 
-Un sempice sito che mostra vari esempi di proprietá in css esterno, interno e inline
+Un semplice sito che mostra vari esempi di proprietá in CSS esterno, interno e inline
 
 ## Homepage
 
 Nella homepage viene descritto il contenuto della pagina e per di accedere al resto degli esempi tramite la navbar.
 Si puó giá notare che il mio nome e la navbar appaiono con un animazione, e che il background non é una semplice immagine ma é un svg animato.
 
-L'animazione viene creata con @keyframes, il quale permette di impostare certe proprietá che cabiamo in un cer to periodo, in questo caso con una percentuale.
+L'animazione viene creata con @keyframes, il quale permette d'impostare certe proprietá che cambiamo in un certo periodo, in questo caso con una percentuale.
 
 Ad esempio nel mio nome ho creato questa animazione:
 ```css
 @keyframes comparsa {
-    0% {
-        transform: scale(200%);
-        opacity: 0;
-    }
-    50%{
-        transform: scale(100%);
-    }
-    100% {
-        opacity: 1;
-    }
+    0% {
+        transform: scale(200%);
+        opacity: 0;
+    }
+    50%{
+        transform: scale(100%);
+    }
+    100% {
+        opacity: 1;
+    }
 }
 ```
 Al inizio il testo é i doppio della sua grandezza e ha un opacitá 0, quindi non é visibile.
 
-Al 50% del animazione (quindi mezzo secondo) il testo é alla sua grandezza originale.
+Al 50% dell'animazione (quindi mezzo secondo) il testo é alla sua grandezza originale.
 
 Al 100% (1s - fine animazione) il testo é visibile.
 
@@ -46,11 +46,11 @@ La prima icona si anima e ruota di -180 gradi nel sito desktop e 90 gradi nel si
 
 Le icone interne anche cambiano colore quando si passa il mouse sopra, oltre a questo si espande e mostra un dropdown menu con tutti i link.
 
-Ovviamnete anche questo é animato ma questo volta, invece di usare i keyframe, ho usato una transition che quando appunto il mouse passa soptra l'icona o il testo affianco, i link cambiano di altezza e diventano visibili.
+Ovviamente anche questo é animato ma questo volta, invece di usare i keyframe, ho usato una transition che quando appunto il mouse passa sopra l'icona o il testo affianco, i link cambiano di altezza e diventano visibili.
 
 Transition permette di specificare la velocitá di questo passaggio e quale proprietá viene animata, facendo in modo che il testo non appaia direttamente ma la sua altezza cambi linearmente.
 
-Come si vedeva giá nel video, il sito cambia forma in base alla grandezza della finstra, migliorando cosí l'esperienza per gli utenti mobile.
+Come si vedeva giá nel video, il sito cambia forma in base alla grandezza della finestra, migliorando cosí l'esperienza per gli utenti mobile.
 
 La navbar si sposta in alto e il testo si riduce in grandezza.
 
@@ -70,15 +70,15 @@ Sempre con @media possiamo rilevare che tema usa l'utente e quindi cambiare colo
 @media (prefers-color-scheme: light)
 @media (prefers-color-scheme: dark)
 ```
-Il cambio del colore non sarebbe possibile senza l'assegnazione di varaibili, che poi verrano usate in tutto il codice.
+Il cambio del colore non sarebbe possibile senza l'assegnazione di variabili, che poi verranno usate in tutto il codice.
 
-Questio mi permette di cambiare facilmente colore a tutto ció che c'é nel sito.
+Questo mi permette di cambiare facilmente colore a tutto ció che c'é nel sito.
 
 L'assegnazione avviene nel root:
 ```css
 :root {
-    --nome-variabile: valore;
- }
+    --nome-variabile: valore;
+ }
 ```
 E viene usata con:
 ```css
@@ -86,15 +86,15 @@ background: var(--background1);
 ```
 ## Esempio 1 BORDERS
 
-Non ce molto da commentare su questa parte perché sono solo sempici prorpietá, l'unica cosa interessante é la grandezza dinamica del testo degli esempi.
+Non ce molto da commentare su questa parte perché sono solo semplici proprietà, l'unica cosa interessante é la grandezza dinamica del testo degli esempi.
 
 Con la funzione clamp possiamo assegnare un valore minimo, uno che cambia e un valore massimo.
 ```css
 .esempo{
-    font-size: clamp(1rem, 1.8vw, 1.8rem); 
+    font-size: clamp(1rem, 1.8vw, 1.8rem); 
 }
 ```
-Al posto di usare i pixel ho usato rem, che é un valore reletivo alla grandezza del testo impostata sul root.
+Al posto di usare i pixel ho usato rem, che é un valore relativo alla grandezza del testo impostata sul root.
 
 In pratica 5rem sarebbero 5 * x pixel impostati.
 
@@ -105,28 +105,28 @@ Gli esempi della pagina dopo un certo valore di grandezza della pagina, stanno d
 Questo perché sfruttando @media only screen e display: grid, mi permette di create una griglia con x colonne e x righe.
 ```css
 @media only screen and (min-width: 900px){
-    .esempi{
-        display: inline-grid;
-        grid-template-columns: auto auto;
-        gap: 8%;
-    }
+    .esempi{
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        gap: 8%;
+    }
 }
 ```
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/75899266/211062157-ecca00b2-e5b1-4b15-be17-f1cfe4e47cfc.gif)
 
 ## Esempio 3 ROUNDED CORNERS
 
-Pure nel terzo esempio usiamo display grid cosí che ogni elemento viene visualizzato piú per righa.
+Pure nel terzo esempio usiamo display grid cosí che ogni elemento viene visualizzato piú per riga.
 
 ![Immagine 2023-01-06 185200](https://user-images.githubusercontent.com/75899266/211069877-b36a863e-fa75-4f81-b299-3304b0227a9c.png)
 
 ```css
 .esempi{
-    display: inline-grid;
-    grid-template-columns: repeat(auto-fit, 250px); 
-    width: 100%;
-    justify-items: center; 
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fit, 250px); 
+    width: 100%;
+    justify-items: center; 
 }
 ```
-Possiamo scegliere il numero di colonne, in questo caso lo impostiamo automaticamnete.
+Possiamo scegliere il numero di colonne, in questo caso lo impostiamo automaticamente.
 Con repeat ripetiamo un pattern di colonne, con una grandezza di 250px.

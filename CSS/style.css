@@ -2,13 +2,14 @@
 facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non manualmente tutte*/
 /*CSS ci permette di identificare il tema utilizzato dal utente su windows, cosí che possiamo cambiare colori per stare a tema*/
 @media (prefers-color-scheme: light) {
+    /*Variabili per i colori principali*/
     :root {
         --testo1: rgb(58, 58, 58);
         --testo2: rgb(0, 0, 0);
         --background1: #f5f5f5;
         --background2: #afafaf;
     }
-
+    /*Impostiamo un svg animato come backgroud a tema chiaro*/
     body {
         background: url(../IMAGES/backgroud-chiaro.svg);
     }
@@ -22,12 +23,12 @@ facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non 
         --background1: #23232e;
         --background2: #141418;
     }
-
+    /*Impostiamo un svg animato come backgroud a tema scuro*/
     body {
         background: url(../IMAGES/backgroud-scuro.svg);
     }
 }
-
+/*Variabili per i colori principali, animazioni, font e grandezza del testo*/
 :root {
     font-size: 16px;
     font-family: arial, sans-serif;
@@ -37,19 +38,18 @@ facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non 
 }
 
 body{
-    color: var(--testo2);
+    color: var(--testo2); /*Con var(--nome-variabile) possiamo inserire un valore prima assegnato in una proprietá*/
     background-color: var(--background1);
-    margin: 0;
+    margin: 0; /*Per non avere uno bordo attorno alla pagina impostiamo margin e padding a 0*/
     padding: 0;
 }
 
-/*In teoria questa parte dovrebbe modificare l'aspetto della scrollbar, peró non funziona ancora*/
-body::-webkit-scrollbar {
-    width: 0.25rem;
-}
+/*Con l'estensione -webkit possiamo cabiare certe proprietá della pagina, in questo caso:*/
+/*Colore backgroud scrollbar*/
 body::-webkit-scrollbar-track {
     background: var(--background1);
 }
+/*Colore puntatore scrollbar*/
 body::-webkit-scrollbar-thumb {
     background: var(--background2);
 }
@@ -59,13 +59,13 @@ body::-webkit-scrollbar-thumb {
     position: fixed;    /*Per rimanere sempre a destra anque quando si scrolla sotto*/
     background-color: var(--background1);
     transition: width 300ms ease;
-    animation: 1s ease-out 0s 1 slidedestra;
+    animation: 1s ease-out 0s 1 slidedestra; /*Avviamo l'animazione al caricamento della pagina*/
 }
 
-/*Animazione rotazione prima icona*/
+/*Impostiamo i valori base per l'animazione di rotazione della prima icona*/
 .logo svg {
     transform: rotate(0deg);
-    transition: transform var(--velocitá-transizioni);
+    transition: transform var(--velocitá-transizioni); /*Impostiamo la velocitá della transizione da 0 gradi a x gradi(varia in base al dispositivo usato)*/
 }
 
 /*Elementi della navigation bar*/
@@ -81,7 +81,7 @@ body::-webkit-scrollbar-thumb {
 
 }
 .nav-icona {
-    display: flex;
+    display: flex;  
     align-items: center;
     text-align: center;
     height: 5rem;
@@ -99,7 +99,7 @@ body::-webkit-scrollbar-thumb {
     background: var(--background2);
     color: var(--testo2);
 }
-
+/*Come con la prima icona, impostiamo i valori base del testo, cosí possimao fare una transizione*/
 .testo-icona {
     display: none;
     margin-left: 1rem;
@@ -124,8 +124,7 @@ body::-webkit-scrollbar-thumb {
 
 .fa-primary,
 .fa-secondary {
-    transition: var(--velocitá-transizioni);
-    /*Velocitá animazione effeto grayscale*/
+    transition: var(--velocitá-transizioni);    /*Velocitá animazione effeto grayscale*/
 }
 
 /*Dropdown menu*/
@@ -133,20 +132,18 @@ body::-webkit-scrollbar-thumb {
 /*Impostiamo l'altezza del dropdown a 0px, cosí che l'animazione ha da dove partire*/
 .nav-link {
     height: 0;
-    transition: height 1s ease;
+    transition: height 1s ease; /*Possiamo specificae quale proprietá avrá una transizione, quanto dura la transizione, e la curva della velocitá*/
 }
 
 .nav-link a {
     text-align: center;
-    display: block;
-    /*Impostiamo display: block per avere ogni link su una riga diversa*/
+    display: block;    /*Impostiamo display: block per avere ogni link su una riga diversa*/
     color: var(--testo1);
     text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
     padding: 0;
     overflow: hidden;
-    /*Rendiamo non visibile il testo per non vederlo quando non si ha il mouse sul icona*/
-    visibility: hidden;
+    visibility: hidden;    /*Rendiamo non visibile il testo per non vederlo quando non si ha il mouse sul icona*/
     opacity: 0;
     height: 0;
     /*Velocitá animazioni*/
@@ -178,7 +175,7 @@ main {
     flex-direction: column;
 }
 
-/*Contenuto pagina*/
+/*Animazione di apparsa*/
 @keyframes comparsa {
     0% {
         transform: scale(200%);
@@ -203,9 +200,9 @@ main {
         opacity: 1;
     }
 }
-
+/*Contenuto pagina*/
 .titolo {
-    font-size: clamp(2rem, 5vw, 4rem); 
+    font-size: clamp(2rem, 5vw, 4rem); /*Possiamo rendere la grandezza del testo dinamica, ingrandendosi in base alla larghezza della pagina, impostando anche un valore minimo e uno massimo.*/
     animation: 1s ease-out 0s 1 comparsa;
 }
 .sottotit{
@@ -219,19 +216,17 @@ main {
     transition: background-color var(--velocitá-transizioni);
 }
 .bottone:hover {
-    background-color: #4d3d64;
+    background-color: #4d3d6470;
 }
 
-/* DA IMPLEMENTARE*/
-/*Mobile ecc, per rendere la barra adatta ai dispositivi mobile*/
-
+/*Proprietá esclusive per i dispositivi mobile*/
 @media only screen and (max-width: 612px) {
     .navbar:hover .logo svg {
         transform: rotate(90deg);
         /*Quando passiamo il mouse sopra la barra di navigazione ruotiamo l'icona di -180 gradi*/
     }
     .navbar {
-        top: 0;
+        top: 0; /*Specichiamo la posizione verticale del elemento, in questo caso attaccato alla parte superiore dello schermo*/
         width: 100%;
         height: 5rem;
     }
@@ -239,10 +234,10 @@ main {
         height: auto;
     }
     .navbar-nav {
-        flex-direction: row;
+        flex-direction: row; /*A differenza della verisone desktop impostiamo gli elementi della flexbox in riga*/
     }
     .nav-icona {
-        justify-content: center;
+        justify-content: center; /*Centraimo gli elementi della flexbox*/
     }
 
     main {
@@ -250,7 +245,7 @@ main {
     }
 
 }
-
+/*Proprietá esclusive per i dispositivi desktop*/
 @media only screen and (min-width: 612px) {
      .logo {
         font-weight: bold;
@@ -277,10 +272,10 @@ main {
     .navbar-nav {
         /*Di base gli elementi vanno in riga, ma dato che vogliamo la nostra barra a sinistra, lo impostiamo a colonne.*/
         flex-direction: column;
-        align-items: center;
+        align-items: center; /*Centriamo gli elementi nel asse x e y*/
     }
 
     main {
-        margin-left: 5rem;
+        margin-left: 5rem; /*Rem valore relativo in base alla grandezza del testo impostato nel root*/
     }
 }

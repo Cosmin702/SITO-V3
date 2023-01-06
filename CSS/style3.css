@@ -1,10 +1,10 @@
 .esempi{
-    display: inline-grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: inline-grid; /*Creiamo una griglia con colonne automatiche in base alla grandezza dello schermo*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     width: 100%;
-    justify-items: center;
+    justify-items: center; /*Centraimao gli esemmpi alla griglia*/
 }
-
+/*Proprietá esempi*/
 .rcorners{
     text-align: center;
     background: var(--icone2);
@@ -20,14 +20,14 @@
 .rcornersborder {
     border-radius: 25px;
     border: 2px solid var(--icone2);
-    background: none;
+    background: none; /*Dato che abbiamo impostato il background color a quai tutti gli esempi ma non in questo, lo rimuoviamo*/
 }
 
 .rcornersimg {
     border-radius: 25px;
     background: url(../IMAGES/kitty-cat-sandwich.gif);
-    background-position: top;
-    background-size: cover;
+    background-position: top; 
+    background-size: cover; /*Copriamo tutta l'area possibile del elemento con l'immagine, e dato che i due non sono della stessa grandezza l'immagine verrá tagliata*/
 }
 
 .rcorners1 {

@@ -1,12 +1,9 @@
 .esempi{
     text-align: center;
-    
+    font-size: clamp(1rem, 1.8vw, 1.8rem); /*La dimesione del testo cambia in base alla larghezza del testo rimandeo tra 1rem e 1.8rem*/
+
 }
-@media only screen and (min-width: 612px){
-    .esempi{
-        font-size: clamp(1rem, 1.8vw, 1.8rem); 
-    }
-}
+/*Proprietá degli esempi*/
 .punteggiato {
     border-style: dotted;
 }

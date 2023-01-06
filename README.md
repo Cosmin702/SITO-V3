@@ -103,7 +103,30 @@ In pratica 5rem sarebbero 5 * x pixel impostati.
 Gli esempi della pagina dopo un certo valore di grandezza della pagina, stanno due per riga.
 
 Questo perché sfruttando @media only screen e display: grid, mi permette di create una griglia con x colonne e x righe.
-
+```css
+@media only screen and (min-width: 900px){
+    .esempi{
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        gap: 8%;
+    }
+}
+```
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/75899266/211062157-ecca00b2-e5b1-4b15-be17-f1cfe4e47cfc.gif)
 
-Possim
+## Esempio 3 ROUNDED CORNERS
+
+Pure nel terzo esempio usiamo display grid cosí che ogni elemento viene visualizzato piú per righa.
+
+![Immagine 2023-01-06 185200](https://user-images.githubusercontent.com/75899266/211069877-b36a863e-fa75-4f81-b299-3304b0227a9c.png)
+
+```css
+.esempi{
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fit, 250px); 
+    width: 100%;
+    justify-items: center; 
+}
+```
+Possiamo scegliere il numero di colonne, in questo caso lo impostiamo automaticamnete.
+Con repeat ripetiamo un pattern di colonne, con una grandezza di 250px.

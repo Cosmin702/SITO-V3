@@ -46,6 +46,7 @@ body{
 
 /*Con l'estensione -webkit possiamo cambiare certe proprietà della pagina, in questo caso:*/
 /*Colore background scrollbar*/
+
 body::-webkit-scrollbar-track {
     background: var(--background1);
 }

@@ -45,15 +45,21 @@ body{
 }
 
 /*Con l'estensione -webkit possiamo cambiare certe proprietà della pagina, in questo caso:*/
+/*Larghezza scrollbar*/
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
 /*Colore background scrollbar*/
-
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: var(--background1);
 }
 /*Colore puntatore scrollbar*/
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: var(--background2);
+    border-radius: 5px;
 }
+
 
 /*Navigation bar*/
 .navbar {

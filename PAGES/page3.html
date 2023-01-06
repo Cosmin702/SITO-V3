@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style1.css">
     <script src="https://kit.fontawesome.com/e8055db231.js" crossorigin="anonymous"></script>
     <!--Icone Fontawesome: fontawesome.com-->
-    <link rel="icon" type="image/svg" href="IMAGES/favicon.svg">
+    <link rel="icon" type="image/svg" href="../IMAGES/favicon.svg">
 
 </head>
 
 <body>
-
     <!--Navigation bar-->
     <!--Quando l'utente passa il mouse sulla barra, la seguente aumenta in larghezza da 5rem a 15rem
     Allo steso tempo avengono altri eventi-->
@@ -23,7 +23,7 @@
 
             <!--Logo animato-->
             <li class="logo">
-                <a href="#" class="nav-icona">
+                <a href="../index.html" class="nav-icona">
                     <span class="testo-icona">ESEMPI CSS</span> <!--sono stato qui ;)-->
                     <!--L'icona usata per la navigation bar é bicolore, ció vuole dire che si puossono scegliere due colori diversi:
                     Uno per la prima parte del icona "fa-primary" e una per la seconda "fa-secondary"
@@ -54,9 +54,9 @@
                 <!--Questo é il testo appartenente al dropdown-menu, ogni singola icona ne ha uno e di base il testo non viene mostrato.
                 Quando l'utente passa il mouse sopra un icona o sul testo affianco, il dropdown menu appare, con un animazione-->
                 <div class="nav-link">
-                    <a href="PAGES/page1.html">Borders</a>
-                    <a href="PAGES/page4.html">Float</a>
-                    <a href="PAGES/page7.html">Rounded Corners</a>
+                    <a href="page1.html">Borders</a>
+                    <a href="page4.html">Float</a>
+                    <a href="page7.html">Rounded Corners</a>
                 </div>
             </li>
             <li class="elemento-nav">
@@ -65,9 +65,9 @@
                     <span class="testo-icona">CSS interno</span>
                 </span>
                 <div class="nav-link">
-                    <a href="PAGES/page2.html">Borders</a>
-                    <a href="PAGES/page5.html">Float</a>
-                    <a href="PAGES/page8.html">Rounded Corners</a>
+                    <a href="page2.html">Borders</a>
+                    <a href="page5.html">Float</a>
+                    <a href="page8.html">Rounded Corners</a>
                 </div>
             </li>
             <li class="elemento-nav">
@@ -76,9 +76,9 @@
                     <span class="testo-icona">CSS in-line</span>
                 </span>
                 <div class="nav-link">
-                    <a href="PAGES/page3.html">Borders</a>
-                    <a href="PAGES/page6.html">Float</a>
-                    <a href="PAGES/page9.html">Rounded Corners</a>
+                    <a href="page3.html">Borders</a>
+                    <a href="page6.html">Float</a>
+                    <a href="page9.html">Rounded Corners</a>
                 </div>
             </li>
         </ul>
@@ -86,9 +86,23 @@
 
     <main>
         <h1 class="titolo">Cosmin Amelian 3A - INFO</h1>
-        <h2 class="sottotitolo">PAGINE CON ESEMPI CSS</h2>
-        
-        <a class="bottone">Github > </a>
+        <h2 class="sottotit">PAGINE ESEMPIO CSS INLINE: BORDERS</h2>
+
+        <div class="esempi">
+            <p style="border-style: dotted;">Punteggiato: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: dashed;">Tratteggiato: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: solid;">Solido: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: double;">Doppio: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: groove;">Scanalatura: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: ridge;">Cresta: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p> <!--Impossibile trovare una traduzione-->
+              <p style="border-style: inset;">Interno: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: outset;">Esterno: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: none;">Nessuno: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: hidden;">Nascosto: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: dotted dashed solid double;">Misto: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+              <p style="border-style: solid; border-color: blue;">Solido colorato: Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus</p>
+        </div>
     </main>
 </body>
+
 </html>

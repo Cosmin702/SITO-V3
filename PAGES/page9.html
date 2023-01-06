@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style3.css">
     <script src="https://kit.fontawesome.com/e8055db231.js" crossorigin="anonymous"></script>
     <!--Icone Fontawesome: fontawesome.com-->
-    <link rel="icon" type="image/svg" href="IMAGES/favicon.svg">
-
+    <link rel="icon" type="image/svg" href="../IMAGES/favicon.svg">
 </head>
 
 <body>
-
     <!--Navigation bar-->
     <!--Quando l'utente passa il mouse sulla barra, la seguente aumenta in larghezza da 5rem a 15rem
     Allo steso tempo avengono altri eventi-->
@@ -23,7 +22,7 @@
 
             <!--Logo animato-->
             <li class="logo">
-                <a href="#" class="nav-icona">
+                <a href="../index.html" class="nav-icona">
                     <span class="testo-icona">ESEMPI CSS</span> <!--sono stato qui ;)-->
                     <!--L'icona usata per la navigation bar é bicolore, ció vuole dire che si puossono scegliere due colori diversi:
                     Uno per la prima parte del icona "fa-primary" e una per la seconda "fa-secondary"
@@ -54,9 +53,9 @@
                 <!--Questo é il testo appartenente al dropdown-menu, ogni singola icona ne ha uno e di base il testo non viene mostrato.
                 Quando l'utente passa il mouse sopra un icona o sul testo affianco, il dropdown menu appare, con un animazione-->
                 <div class="nav-link">
-                    <a href="PAGES/page1.html">Borders</a>
-                    <a href="PAGES/page4.html">Float</a>
-                    <a href="PAGES/page7.html">Rounded Corners</a>
+                    <a href="page1.html">Borders</a>
+                    <a href="page4.html">Float</a>
+                    <a href="page7.html">Rounded Corners</a>
                 </div>
             </li>
             <li class="elemento-nav">
@@ -65,9 +64,9 @@
                     <span class="testo-icona">CSS interno</span>
                 </span>
                 <div class="nav-link">
-                    <a href="PAGES/page2.html">Borders</a>
-                    <a href="PAGES/page5.html">Float</a>
-                    <a href="PAGES/page8.html">Rounded Corners</a>
+                    <a href="page2.html">Borders</a>
+                    <a href="page5.html">Float</a>
+                    <a href="page8.html">Rounded Corners</a>
                 </div>
             </li>
             <li class="elemento-nav">
@@ -76,9 +75,9 @@
                     <span class="testo-icona">CSS in-line</span>
                 </span>
                 <div class="nav-link">
-                    <a href="PAGES/page3.html">Borders</a>
-                    <a href="PAGES/page6.html">Float</a>
-                    <a href="PAGES/page9.html">Rounded Corners</a>
+                    <a href="page3.html">Borders</a>
+                    <a href="page6.html">Float</a>
+                    <a href="page9.html">Rounded Corners</a>
                 </div>
             </li>
         </ul>
@@ -86,9 +85,18 @@
 
     <main>
         <h1 class="titolo">Cosmin Amelian 3A - INFO</h1>
-        <h2 class="sottotitolo">PAGINE CON ESEMPI CSS</h2>
-        
-        <a class="bottone">Github > </a>
+        <h2 class="sottotit">PAGINE ESEMPIO CSS ESTERNO: BORDERS</h2>
+
+        <div style="text-align: center; display: inline-grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); width: 100%; justify-items: center;">
+            <p style="background: var(--icone2); width: 200px; height: 150px; padding: 20px; border-radius: 25px;">Rounded corners! Con background color</p>
+            <p style="width: 200px; height: 150px; padding: 20px; border-radius: 25px; border: 2px solid var(--icone2);">Rounded corners! Con border colorato </p>
+            <p style="width: 200px; height: 150px; padding: 20px; border-radius: 25px; background: url(../IMAGES/kitty-cat-sandwich.gif); background-position: top; background-size: cover;">Rounded corners! Con immagine di backgroud </p>
+            <p style="background: var(--icone2); width: 200px; height: 150px; padding: 20px; border-radius: 15px;">Rounded corners! Con 1 valori </p>
+            <p style="background: var(--icone2); width: 200px; height: 150px; padding: 20px; border-radius: 15px 50px;">Rounded corners! Con 2 valori </p>
+            <p style="background: var(--icone2); width: 200px; height: 150px; padding: 20px; border-radius: 15px 50px 30px;">Rounded corners! Con 3 valori </p>
+            <p style="background: var(--icone2); width: 200px; height: 150px; padding: 20px; border-radius: 15px 50px 30px 5px;">Rounded corners! Con 4 valori</p>
+        </div>
     </main>
 </body>
+
 </html>

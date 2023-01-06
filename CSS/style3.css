@@ -1,0 +1,47 @@
+.esempi{
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+    justify-items: center;
+}
+
+.rcorners{
+    text-align: center;
+    background: var(--icone2);
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+}
+
+.rcornersback {
+    border-radius: 25px;
+}
+
+.rcornersborder {
+    border-radius: 25px;
+    border: 2px solid var(--icone2);
+    background: none;
+}
+
+.rcornersimg {
+    border-radius: 25px;
+    background: url(../IMAGES/kitty-cat-sandwich.gif);
+    background-position: top;
+    background-size: cover;
+}
+
+.rcorners1 {
+    border-radius: 15px;
+}
+
+.rcorners2 {
+    border-radius: 15px 50px;
+}
+
+.rcorners3 {
+    border-radius: 15px 50px 30px;
+}
+
+.rcorners4 {
+    border-radius: 15px 50px 30px 5px;
+}

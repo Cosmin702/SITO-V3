@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="https://kit.fontawesome.com/e8055db231.js" crossorigin="anonymous"></script>
+    <!--Icone Fontawesome: fontawesome.com-->
+    <link rel="icon" type="image/svg" href="../IMAGES/favicon.svg">
+    <style>
+        .floatr {
+            float: right;
+            width: 170px;
+            height: 170px;
+            border-radius: 10%;
+        }
+
+        .floatl {
+            float: left;
+            width: 0.7em;
+            font-size: 400%;
+            font-family: algerian, courier;
+            line-height: 80%;
+        }
+
+        .clearfix {
+            border: 3px solid blue;
+            padding: 5px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .titoli {
+            text-align: center;
+        }
+
+        @media only screen and (min-width: 900px) {
+            .esempi {
+                display: inline-grid;
+                grid-template-columns: auto auto;
+                gap: 8%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <!--Quando l'utente passa il mouse sulla barra, la seguente aumenta in larghezza da 5rem a 15rem
+    Allo steso tempo avengono altri eventi-->
+    <nav class="navbar">
+        <ul class="navbar-nav">
+
+            <!--Logo animato-->
+            <li class="logo">
+                <a href="../index.html" class="nav-icona">
+                    <span class="testo-icona">ESEMPI CSS</span> <!--sono stato qui ;)-->
+                    <!--L'icona usata per la navigation bar é bicolore, ció vuole dire che si puossono scegliere due colori diversi:
+                    Uno per la prima parte del icona "fa-primary" e una per la seconda "fa-secondary"
+                    Tutto ció viene animato quando si passa il mouse sopra la navigation bar, routando l'icona di 180 gradi con una 
+                    transizione, e cambiando colore del icona(questo accade in tutte le icone)-->
+                    <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right"
+                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                        class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x">
+                        <g class="fa-group">
+                            <path fill="currentColor"
+                                d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
+                                class="fa-secondary"></path>
+                            <path fill="currentColor"
+                                d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
+                                class="fa-primary"></path>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+
+            <!--Link per altre pagine-->
+            <!--Ognuno di questi contiene un icona e un testo nascosto, quando l'utente passa il mouse sopra la navigation bar il testo riappare-->
+            <li class="elemento-nav">
+                <span class="nav-icona">
+                    <i class="fa-solid fa-file-code"></i>
+                    <span class="testo-icona">CSS esterno</span>
+                </span>
+                <!--Questo é il testo appartenente al dropdown-menu, ogni singola icona ne ha uno e di base il testo non viene mostrato.
+                Quando l'utente passa il mouse sopra un icona o sul testo affianco, il dropdown menu appare, con un animazione-->
+                <div class="nav-link">
+                    <a href="page1.html">Borders</a>
+                    <a href="page4.html">Float</a>
+                    <a href="page7.html">Rounded Corners</a>
+                </div>
+            </li>
+            <li class="elemento-nav">
+                <span class="nav-icona">
+                    <i class="fa-solid fa-code"></i>
+                    <span class="testo-icona">CSS interno</span>
+                </span>
+                <div class="nav-link">
+                    <a href="page2.html">Borders</a>
+                    <a href="page5.html">Float</a>
+                    <a href="page8.html">Rounded Corners</a>
+                </div>
+            </li>
+            <li class="elemento-nav">
+                <span class="nav-icona">
+                    <i class="fa-solid fa-outdent"></i>
+                    <span class="testo-icona">CSS in-line</span>
+                </span>
+                <div class="nav-link">
+                    <a href="page3.html">Borders</a>
+                    <a href="page6.html">Float</a>
+                    <a href="page9.html">Rounded Corners</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="titolo">Cosmin Amelian 3A - INFO</h1>
+        <h2 class="sottotit">PAGINE ESEMPIO CSS INTERNO: FLOAT</h2>
+
+        <div class="esempi">
+            <div class="esempio">
+                <p> <img src="../IMAGES/pineapple.jpg" alt="pineapple" class="floatr">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum
+                    interdum, nisi
+                    lorem egestas odio,
+                    vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor
+                    vitae massa.
+                    Fusce luctus vestibulum
+                    augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis
+                    urna a lacus
+                    interdum ut hendrerit risus congue.
+                    Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis
+                    imperdiet sed
+                    ornare turpis. Donec vitae dui eget tellus gravida venenatis.
+                    Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo
+                    purus. Mauris
+                    quis diam velit.
+                </p>
+            </div>
+            <div class="esempio">
+
+                <h3 class="titoli">Float left con altri style</h3>
+                <p><span class="floatl">L</span>
+                    orem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum
+                    interdum, nisi
+                    lorem egestas odio,
+                    vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor
+                    vitae massa.
+                    Fusce luctus vestibulum
+                    augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis
+                    urna a lacus
+                    interdum ut hendrerit risus congue.
+                    Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis
+                    imperdiet sed
+                    ornare turpis. Donec vitae dui eget tellus gravida venenatis.
+                    Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo
+                    purus. Mauris
+                    quis diam velit.
+                </p>
+            </div>
+            <div class="esempio">
+
+                <h3 class="titoli">Float right con secondo paragrafo a capo</h3>
+
+                <p> <img src="../IMAGES/img_mountains.jpg" alt="mountains" class="floatr">Lorem ipsum
+                    dolor sit amet,
+                    consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio,
+                    vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor
+                    vitae massa.
+                    Fusce luctus vestibulum
+                    augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis
+                    urna a lacus
+                    interdum ut hendrerit risus congue.
+                    Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis
+                    imperdiet sed
+                    ornare turpis. Donec vitae dui eget tellus gravida venenatis.
+                </p>
+                <p class="clear">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et
+                    dictum
+                    interdum, nisi lorem egestas odio,
+                    vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor
+                    vitae massa.
+                    Fusce luctus vestibulum
+                    augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis
+                    urna a lacus
+                    interdum ut hendrerit risus congue.
+                    Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis
+                    imperdiet sed
+                    ornare turpis. Donec vitae dui eget tellus gravida venenatis.
+                </p>
+            </div>
+            <div class="esempio">
+
+                <h3 class="titoli">Float clearfix</h3>
+                <div class="clearfix"><img src="../IMAGES/kitty-cat-sandwich.gif" alt="cat" class="floatr">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum
+                    interdum, nisi
+                    lorem egestas odio,
+                    vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor
+                    vitae massa.
+                    Fusce luctus vestibulum
+                    augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis
+                    urna a lacus
+                    interdum ut hendrerit risus congue.
+                    Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis
+                    imperdiet sed
+                    ornare turpis. Donec vitae dui eget tellus gravida venenatis.
+                    Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo
+                    purus. Mauris
+                    quis diam velit.
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+.esempi{
+    text-align: center;
+    
+}
+@media only screen and (min-width: 612px){
+    .esempi{
+        font-size: clamp(1rem, 1.8vw, 1.8rem); 
+    }
+}
+.punteggiato {
+    border-style: dotted;
+}
+
+.tratteggiato {
+    border-style: dashed;
+}
+
+.solido {
+    border-style: solid;
+}
+
+.doppio {
+    border-style: double;
+}
+
+.scanalatura {
+    border-style: groove;
+}
+
+.cresta {
+    border-style: ridge;
+}
+
+.interno {
+    border-style: inset;
+}
+
+.esterno {
+    border-style: outset;
+}
+
+.nessuno {
+    border-style: none;
+}
+
+.nascosto {
+    border-style: hidden;
+}
+
+.misto {
+    border-style: dotted dashed solid double;
+}
+
+.solidocol {
+    border-style: solid;
+    border-color: blue;
+}

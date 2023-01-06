@@ -1,71 +1,63 @@
 /*Dichiariamo e assegnaimo le vairabili di base, come i colori dei testi e la velocitá delle trasazioni.
-facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non tutte*/
+facciamo tutto nel root cosí che basta cambiare solo una sola proprietá e non manualmente tutte*/
+/*CSS ci permette di identificare il tema utilizzato dal utente su windows, cosí che possiamo cambiare colori per stare a tema*/
 @media (prefers-color-scheme: light) {
     :root {
-        --text-primary: rgb(58, 58, 58);
-        --text-secondary: rgb(0, 0, 0);
-        --bg-primary: #f5f5f5;
-        --bg-secondary: #afafaf;
+        --testo1: rgb(58, 58, 58);
+        --testo2: rgb(0, 0, 0);
+        --background1: #f5f5f5;
+        --background2: #afafaf;
     }
 
     body {
-        background: url(backgroud-white.svg);
-    }
-
-    .nav-icon {
-        filter: grayscale(100%) opacity(1);
+        background: url(../IMAGES/backgroud-chiaro.svg);
     }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --text-primary: rgb(185, 185, 185);
-        --text-secondary: white;
-        --bg-primary: #23232e;
-        --bg-secondary: #141418;
+        /*Variabili per i colori principali*/
+        --testo1: rgb(185, 185, 185);
+        --testo2: white;
+        --background1: #23232e;
+        --background2: #141418;
     }
 
     body {
-        background: url(backgroud-dark.svg);
-    }
-
-    .nav-icon {
-        filter: grayscale(100%) opacity(0.7);
+        background: url(../IMAGES/backgroud-scuro.svg);
     }
 }
 
 :root {
     font-size: 16px;
     font-family: arial, sans-serif;
-    --transition-speed: 600ms;
-    --icon-primary: rgb(116, 255, 135);
-    --icon-secondary: rgb(0, 158, 124);
+    --velocitá-transizioni: 600ms;
+    --icone1: rgb(49, 109, 187);
+    --icone2: rgba(117, 157, 243, 0.5);
 }
 
 body{
-    color: var(--text-secondary);
-    background-color: var(--bg-primary);
+    color: var(--testo2);
+    background-color: var(--background1);
     margin: 0;
     padding: 0;
 }
+
 /*In teoria questa parte dovrebbe modificare l'aspetto della scrollbar, peró non funziona ancora*/
 body::-webkit-scrollbar {
     width: 0.25rem;
 }
-
 body::-webkit-scrollbar-track {
-    background: var(--bg-primary);
+    background: var(--background1);
 }
-
 body::-webkit-scrollbar-thumb {
-    background: var(--bg-secondary);
+    background: var(--background2);
 }
 
 /*Navigation bar*/
 .navbar {
-    position: fixed;
-    /*Per rimanere sempre a destra anque quando si scrolla sotto*/
-    background-color: var(--bg-primary);
+    position: fixed;    /*Per rimanere sempre a destra anque quando si scrolla sotto*/
+    background-color: var(--background1);
     transition: width 300ms ease;
     animation: 1s ease-out 0s 1 slidedestra;
 }
@@ -73,50 +65,49 @@ body::-webkit-scrollbar-thumb {
 /*Animazione rotazione prima icona*/
 .logo svg {
     transform: rotate(0deg);
-    transition: transform var(--transition-speed);
+    transition: transform var(--velocitá-transizioni);
 }
+
 /*Elementi della navigation bar*/
 .navbar-nav {
     list-style: none;
     padding: 0;
     margin: 0;
-    /*Creiamo una flexbox, che conterra gli elementi della navigation bar*/
-    display: flex;
+    display: flex;    /*Creiamo una flexbox, che conterra gli elementi della navigation bar*/
 }
-
-/*Per non mostrare gli elementi della navigation bar prima che finisca l'animazione, impostiamo overflow: hidden*/
-.nav-item {
+.elemento-nav {
     width: 100%;
-    overflow: hidden;
-}
+    overflow: hidden; /*Per non mostrare gli elementi della navigation bar prima che finisca l'animazione, impostiamo overflow: hidden*/
 
-.nav-icon {
+}
+.nav-icona {
     display: flex;
     align-items: center;
     text-align: center;
     height: 5rem;
-    color: var(--text-primary);
+    color: var(--testo1);
     text-decoration: none;
-    transition: var(--transition-speed);
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--velocitá-transizioni);
 }
 
 /*Animazione icone*/
 /*Ogni volta che passiamo il mouse su un icona o testo, riuduciamo l'effetto grayscale a 0, mostrando cosí il colore del icona*/
-.nav-icon:hover,
+.nav-icona:hover,
 .nav-link a:hover {
     filter: grayscale(0%) opacity(1);
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
+    background: var(--background2);
+    color: var(--testo2);
 }
 
-.icon-text {
+.testo-icona {
     display: none;
     margin-left: 1rem;
 }
 
-.nav-icon svg,
-.nav-icon i {
-    min-width: 2.5rem;
+.nav-icona svg,
+.nav-icona i {
+    width: 2.5rem;  /*Non tutte le icone sono delle stessa grandezza quindi impostiamo una grandezza uguale per tutte*/
     margin: 0 1.25rem;
     font-size: 2rem;
 }
@@ -124,16 +115,16 @@ body::-webkit-scrollbar-thumb {
 /*Colore icone*/
 .fa-primary,
 .fa-solid {
-    color: var(--icon-primary);
+    color: var(--icone1);
 }
 
 .fa-secondary {
-    color: var(--icon-secondary);
+    color: var(--icone2);
 }
 
 .fa-primary,
 .fa-secondary {
-    transition: var(--transition-speed);
+    transition: var(--velocitá-transizioni);
     /*Velocitá animazione effeto grayscale*/
 }
 
@@ -149,7 +140,7 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     display: block;
     /*Impostiamo display: block per avere ogni link su una riga diversa*/
-    color: var(--text-primary);
+    color: var(--testo1);
     text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
     padding: 0;
@@ -159,20 +150,20 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
     height: 0;
     /*Velocitá animazioni*/
-    transition: visibility 0s, opacity var(--transition-speed) linear,
-        height var(--transition-speed), padding var(--transition-speed),
-        grayscale var(--transition-speed);
+    transition: visibility 0s, opacity var(--velocitá-transizioni) linear,
+        height var(--velocitá-transizioni), padding var(--velocitá-transizioni),
+        grayscale var(--velocitá-transizioni);
 }
 
 /*Quando passiamo il mouse su un icona, il dropdown menu torna alla sua altezza originale*/
-.nav-icon:hover+.nav-link,
+.nav-icona:hover+.nav-link,
 .nav-link:hover {
     display: block;
     height: max-content;
 }
 
 /*Quando passiamo il mouse su un icona, i link del dropdown menu torna alla sua altezza originale e si rende visibile*/
-.nav-icon:hover+.nav-link a,
+.nav-icona:hover+.nav-link a,
 .nav-link:hover a {
     visibility: visible;
     opacity: 1;
@@ -181,28 +172,25 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
+    align-items: center;    
     padding: 1rem;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 /*Contenuto pagina*/
-
-
-@keyframes slidesinistra {
+@keyframes comparsa {
     0% {
-        transform: translateX(70%);
+        transform: scale(200%);
         opacity: 0;
-  
     }
-    90%{
-        transform: translateX(0);
+    50%{
+        transform: scale(100%);
     }
     100% {
         opacity: 1;
     }
 }
-
 @keyframes slidedestra {
     0% {
         transform: translateX(-70%);
@@ -216,14 +204,20 @@ main {
     }
 }
 
+.titolo {
+    font-size: clamp(2rem, 5vw, 4rem); 
+    animation: 1s ease-out 0s 1 comparsa;
+}
+.sottotit{
+    font-size: clamp(1rem, 1.5vw, 2rem); 
+}
 .bottone {
-    font-size: 2.5vw;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
     padding: 10px 20px;
     border: 1px solid;
     border-radius: 15px;
-    transition: background-color var(--transition-speed);
+    transition: background-color var(--velocitá-transizioni);
 }
-
 .bottone:hover {
     background-color: #4d3d64;
 }
@@ -231,7 +225,7 @@ main {
 /* DA IMPLEMENTARE*/
 /*Mobile ecc, per rendere la barra adatta ai dispositivi mobile*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 612px) {
     .navbar:hover .logo svg {
         transform: rotate(90deg);
         /*Quando passiamo il mouse sopra la barra di navigazione ruotiamo l'icona di -180 gradi*/
@@ -241,58 +235,45 @@ main {
         width: 100%;
         height: 5rem;
     }
-
     .navbar:hover {
         height: auto;
     }
-
     .navbar-nav {
         flex-direction: row;
     }
-
-    .nav-icon {
+    .nav-icona {
         justify-content: center;
     }
 
     main {
         margin-top: 5rem;
-        align-items: center;    
     }
 
-    .titolo {
-        font-size: 8vw;
-        animation: 1s ease-out 0s 1 slidesinistra;
-    }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 612px) {
      .logo {
         font-weight: bold;
-        color: var(--text-secondary);
+        color: var(--testo2);
         letter-spacing: 0.3ch;
         width: 100%;
         overflow: hidden;
     }
-    
     .navbar:hover .logo svg {
         transform: rotate(-180deg);
         /*Quando passiamo il mouse sopra la barra di navigazione ruotiamo l'icona di -180 gradi*/
     }
-    
     .navbar {
         width: 5rem;
-        height: 100vh;
+        height: 100%;
     }
-
     .navbar:hover {
         width: 16rem;
     }
-
-    .navbar:hover .icon-text {
+    .navbar:hover .testo-icona {
         display: inline;
-        transition: opacity var(--transition-speed); 
+        transition: opacity var(--velocitá-transizioni); 
     }
-
     .navbar-nav {
         /*Di base gli elementi vanno in riga, ma dato che vogliamo la nostra barra a sinistra, lo impostiamo a colonne.*/
         flex-direction: column;
@@ -300,14 +281,6 @@ main {
     }
 
     main {
-        align-items: flex-end;    
         margin-left: 5rem;
-        margin-right: 10%;
     }
-
-    .titolo {
-        font-size: 5vw;
-        animation: 1s ease-out 0s 1 slidesinistra;
-    }
-
 }

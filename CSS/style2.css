@@ -1,0 +1,41 @@
+.floatr {
+    float: right;
+    width: 170px;
+    height: 170px;
+    border-radius: 10%;
+}
+
+.floatl {
+    float: left;
+    width: 0.7em;
+    font-size: 400%;
+    font-family: algerian, courier;
+    line-height: 80%;
+}
+
+.clearfix {
+    border: 3px solid blue;
+    padding: 5px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.clear {
+    clear: both;
+}
+
+.titoli{
+    text-align: center;
+}
+
+@media only screen and (min-width: 900px){
+    .esempi{
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        gap: 8%;
+    }
+}

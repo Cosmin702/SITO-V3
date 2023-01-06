@@ -1,7 +1,7 @@
-/*In base alla garndezza dello schermo visualizziamo due elementi sulla stessa riga*/
+/*In base alla grandezza dello schermo visualizziamo due elementi sulla stessa riga*/
 @media only screen and (min-width: 900px){
     .esempi{
-        display: inline-grid; /*Creiamo una griglia con 2 colonne di grandezza automatica e uno spazzio tra loro di 8%*/
+        display: inline-grid; /*Creiamo una griglia con 2 colonne di grandezza automatica e uno spazio tra loro di 8%*/
         grid-template-columns: auto auto;
         gap: 8%;
     }

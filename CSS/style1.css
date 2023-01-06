@@ -1,6 +1,6 @@
 .esempi{
     text-align: center;
-    font-size: clamp(1rem, 1.8vw, 1.8rem); /*La dimesione del testo cambia in base alla larghezza del testo rimandeo tra 1rem e 1.8rem*/
+    font-size: clamp(1rem, 1.8vw, 1.8rem); /*La dimensione del testo cambia in base alla larghezza del testo rimanendo tra 1rem e 1.8rem*/
 
 }
 /*Proprietá degli esempi*/
